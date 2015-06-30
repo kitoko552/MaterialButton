@@ -30,16 +30,16 @@
 /* Begin PBXFileReference section */
 		8FA68AAD1B411941001B5282 /* MaterialButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaterialButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FA68AB11B411941001B5282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8FA68AB21B411941001B5282 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8FA68AB41B411941001B5282 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8FA68AB21B411941001B5282 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = MaterialButton/AppDelegate.swift; sourceTree = "<group>"; };
+		8FA68AB41B411941001B5282 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = MaterialButton/ViewController.swift; sourceTree = "<group>"; };
 		8FA68AB71B411941001B5282 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8FA68AB91B411941001B5282 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8FA68AB91B411941001B5282 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MaterialButton/Images.xcassets; sourceTree = "<group>"; };
 		8FA68ABC1B411941001B5282 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8FA68AC21B411941001B5282 /* MaterialButtonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MaterialButtonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FA68AC71B411941001B5282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FA68AC81B411941001B5282 /* MaterialButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialButtonTests.swift; sourceTree = "<group>"; };
-		8FA68AD21B41195A001B5282 /* MaterialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
-		8FA68AD41B424491001B5282 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		8FA68AD21B41195A001B5282 /* MaterialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MaterialButton.swift; path = ../../Source/MaterialButton.swift; sourceTree = "<group>"; };
+		8FA68AD41B424491001B5282 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = MaterialButton/SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,9 +63,8 @@
 		8FA68AA41B411941001B5282 = {
 			isa = PBXGroup;
 			children = (
+				8FA68AD61B426FBE001B5282 /* Example */,
 				8FA68AAF1B411941001B5282 /* MaterialButton */,
-				8FA68AC51B411941001B5282 /* MaterialButtonTests */,
-				8FA68AAE1B411941001B5282 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,14 +80,7 @@
 		8FA68AAF1B411941001B5282 /* MaterialButton */ = {
 			isa = PBXGroup;
 			children = (
-				8FA68AB21B411941001B5282 /* AppDelegate.swift */,
-				8FA68AB41B411941001B5282 /* ViewController.swift */,
-				8FA68AD41B424491001B5282 /* SecondViewController.swift */,
-				8FA68AB61B411941001B5282 /* Main.storyboard */,
-				8FA68AB91B411941001B5282 /* Images.xcassets */,
-				8FA68ABB1B411941001B5282 /* LaunchScreen.xib */,
 				8FA68AD21B41195A001B5282 /* MaterialButton.swift */,
-				8FA68AB01B411941001B5282 /* Supporting Files */,
 			);
 			path = MaterialButton;
 			sourceTree = "<group>";
@@ -99,6 +91,7 @@
 				8FA68AB11B411941001B5282 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			path = MaterialButton;
 			sourceTree = "<group>";
 		};
 		8FA68AC51B411941001B5282 /* MaterialButtonTests */ = {
@@ -108,7 +101,7 @@
 				8FA68AC61B411941001B5282 /* Supporting Files */,
 			);
 			path = MaterialButtonTests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		8FA68AC61B411941001B5282 /* Supporting Files */ = {
 			isa = PBXGroup;
@@ -116,6 +109,22 @@
 				8FA68AC71B411941001B5282 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8FA68AD61B426FBE001B5282 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				8FA68AB21B411941001B5282 /* AppDelegate.swift */,
+				8FA68AB41B411941001B5282 /* ViewController.swift */,
+				8FA68AD41B424491001B5282 /* SecondViewController.swift */,
+				8FA68AB61B411941001B5282 /* Main.storyboard */,
+				8FA68AB91B411941001B5282 /* Images.xcassets */,
+				8FA68ABB1B411941001B5282 /* LaunchScreen.xib */,
+				8FA68AC51B411941001B5282 /* MaterialButtonTests */,
+				8FA68AAE1B411941001B5282 /* Products */,
+				8FA68AB01B411941001B5282 /* Supporting Files */,
+			);
+			name = Example;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +259,7 @@
 				8FA68AB71B411941001B5282 /* Base */,
 			);
 			name = Main.storyboard;
+			path = MaterialButton;
 			sourceTree = "<group>";
 		};
 		8FA68ABB1B411941001B5282 /* LaunchScreen.xib */ = {
@@ -258,6 +268,7 @@
 				8FA68ABC1B411941001B5282 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = MaterialButton;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -419,6 +430,7 @@
 				8FA68ACE1B411941001B5282 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8FA68ACF1B411941001B5282 /* Build configuration list for PBXNativeTarget "MaterialButtonTests" */ = {
 			isa = XCConfigurationList;
@@ -427,6 +439,7 @@
 				8FA68AD11B411941001B5282 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

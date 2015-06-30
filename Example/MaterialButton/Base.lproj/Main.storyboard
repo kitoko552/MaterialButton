@@ -13,12 +13,24 @@
                         <viewControllerLayoutGuide type="top" id="6VE-Gr-b3Y"/>
                         <viewControllerLayoutGuide type="bottom" id="DOX-OW-CNO"/>
                     </layoutGuides>
-                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="MKMapView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJL-OO-tb7" customClass="MaterialButton" customModule="MaterialButton" customModuleProvider="target">
+                                <rect key="frame" x="277" y="160" width="47" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="47" id="4Yp-cq-xXH"/>
+                                    <constraint firstAttribute="height" constant="47" id="JV4-9B-Psd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="×">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsJ-iS-Dbd" customClass="MaterialButton" customModule="MaterialButton" customModuleProvider="target">
-                                <rect key="frame" x="537" y="532" width="47" height="48"/>
+                                <rect key="frame" x="277" y="276" width="47" height="48"/>
                                 <color key="backgroundColor" red="0.85787563131313127" green="0.30251094079246343" blue="0.19641131686122451" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="47" id="BIR-pd-k7D"/>
@@ -32,29 +44,25 @@
                                     <segue destination="eFW-E1-KWM" kind="presentation" id="uZX-qg-ubx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJL-OO-tb7" customClass="MaterialButton" customModule="MaterialButton" customModuleProvider="target">
-                                <rect key="frame" x="16" y="20" width="47" height="47"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="47" id="4Yp-cq-xXH"/>
-                                    <constraint firstAttribute="height" constant="47" id="JV4-9B-Psd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="×">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qJL-OO-tb7" firstAttribute="top" secondItem="6VE-Gr-b3Y" secondAttribute="bottom" id="4WO-lr-DAa"/>
-                            <constraint firstItem="qJL-OO-tb7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ByO-So-IbS"/>
+                            <constraint firstItem="qJL-OO-tb7" firstAttribute="top" secondItem="6VE-Gr-b3Y" secondAttribute="bottom" constant="140" id="4WO-lr-DAa"/>
+                            <constraint firstItem="qJL-OO-tb7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="261" id="ByO-So-IbS"/>
+                            <constraint firstItem="lsJ-iS-Dbd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="J7i-6d-Twv"/>
+                            <constraint firstItem="lsJ-iS-Dbd" firstAttribute="leading" secondItem="qJL-OO-tb7" secondAttribute="leading" id="LYu-GR-cM5"/>
                             <constraint firstItem="DOX-OW-CNO" firstAttribute="top" secondItem="qJL-OO-tb7" secondAttribute="bottom" constant="550" id="P60-Qb-s7t"/>
-                            <constraint firstItem="lsJ-iS-Dbd" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="cJU-VY-9PH"/>
-                            <constraint firstAttribute="bottom" secondItem="lsJ-iS-Dbd" secondAttribute="bottom" constant="20" symbolic="YES" id="k8K-Ug-0f7"/>
+                            <constraint firstItem="lsJ-iS-Dbd" firstAttribute="top" secondItem="qJL-OO-tb7" secondAttribute="bottom" constant="69" id="XTh-Ug-YFT"/>
+                            <constraint firstItem="lsJ-iS-Dbd" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-260" id="cJU-VY-9PH"/>
+                            <constraint firstAttribute="bottom" secondItem="lsJ-iS-Dbd" secondAttribute="bottom" constant="276" id="k8K-Ug-0f7"/>
+                            <constraint firstItem="qJL-OO-tb7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uV9-bA-k5u"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="4WO-lr-DAa"/>
+                                <exclude reference="ByO-So-IbS"/>
+                                <exclude reference="cJU-VY-9PH"/>
+                                <exclude reference="k8K-Ug-0f7"/>
                                 <exclude reference="P60-Qb-s7t"/>
                             </mask>
                         </variation>

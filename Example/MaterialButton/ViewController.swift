@@ -14,18 +14,20 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-        
+    
+    // Circlize the button
     plusButton.layer.cornerRadius = plusButton.bounds.size.width / 2
     plusButton.layer.shadowOffset = CGSizeMake(0, 10)
     plusButton.layer.shadowRadius = 4
     plusButton.layer.shadowOpacity = 0.2
     
+    // You can change ripple color.
     xButton.rippleColor = UIColor.lightGrayColor()
   }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
+
 }
 
