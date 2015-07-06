@@ -8,7 +8,9 @@
 
 MaterialButton is material design button like used in [Google Calendar for iOS](https://itunes.apple.com/us/app/google-calendar/id909319292?mt=8) or [Inbox by Gmail for iOS](https://itunes.apple.com/us/app/inbox-by-gmail-inbox-that/id905060486?mt=8).  
 
-MaterialButton is inspired by [MaterialKit@nghialv](https://github.com/nghialv/MaterialKit) and based in my [CircularRevealAnimator@kitoko552](https://github.com/kitoko552/CircularRevealAnimator).
+It is inspired by [MaterialKit@nghialv](https://github.com/nghialv/MaterialKit) and based in my [CircularRevealAnimator@kitoko552](https://github.com/kitoko552/CircularRevealAnimator).
+
+![Demo](http://f.st-hatena.com/images/fotolife/k/kitoko552/20150706/20150706095412.gif?1436144086)
 
 ## Installation
 Add the `MaterialButton.swift` file to your project.
@@ -36,13 +38,6 @@ If you want to initialize MaterialButton, you can use two initializers below.
 let button1 = MaterialButton()
 let button2 = MaterialButton(frame: CGRectMake(...))
 ```
-
-### Customization
-You can customize some properties of animation below.
-- expandDuration
-- contractDuration
-- rippleOpacity
-- rippleColor
 
 ## Requirements
 - iOS 8.0+
