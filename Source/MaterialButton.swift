@@ -17,6 +17,7 @@ class MaterialButton: UIButton {
     
   var expandDuration: CFTimeInterval = 0.08
   var contractDuration: CFTimeInterval = 0.1
+  var fadeDuration: CFTimeInterval = 0.5
   
   var rippleOpacity: Float = 0.2 {
     willSet {
@@ -63,7 +64,7 @@ class MaterialButton: UIButton {
     let touchPoint = touch.locationInView(self)
     
     expands = true
-        
+    
     expandAnimation(touchPoint)
   }
     
@@ -97,10 +98,10 @@ class MaterialButton: UIButton {
     let touchPoint = touch.locationInView(self)
         
     if acceptable(touchPoint) {
-      // send actions after animation has completed.
+      // Send actions after animation has completed.
       NSThread.sleepForTimeInterval(expandDuration + MaterialButton.DelayAfterAnimation)
       sendActionsForControlEvents(.TouchUpInside)
-      contractAnimation(touchPoint)
+      fadeAnimation()
     } else {
       sendActionsForControlEvents(.TouchUpOutside)
     }
@@ -117,10 +118,12 @@ class MaterialButton: UIButton {
   // MARK: - Animation
     
   private func expandAnimation(touchPoint: CGPoint) {
+    rippleLayer.removeAnimationForKey("fade")
+    
     let initialPath = CGPathCreateWithEllipseInRect(CGRectMake(touchPoint.x, touchPoint.y, 0, 0), nil)
     let expandedPath = CGPathCreateWithEllipseInRect(self.bounds, nil)
     
-    let rippleAnimation = setupAnimation(duration: expandDuration, fromValue: initialPath, toValue: expandedPath)
+    let rippleAnimation = setupAnimation(keyPath: "path", duration: expandDuration, fromValue: initialPath, toValue: expandedPath)
     rippleLayer.mask.addAnimation(rippleAnimation, forKey: nil)
   }
     
@@ -128,12 +131,21 @@ class MaterialButton: UIButton {
     let initialPath = CGPathCreateWithEllipseInRect(self.bounds, nil)
     let expandedPath = CGPathCreateWithEllipseInRect(CGRectMake(touchPoint.x, touchPoint.y, 0, 0), nil)
     
-    let rippleAnimation = setupAnimation(duration: contractDuration, fromValue: initialPath, toValue: expandedPath)
+    let rippleAnimation = setupAnimation(keyPath: "path", duration: contractDuration, fromValue: initialPath, toValue: expandedPath)
     rippleLayer.mask.addAnimation(rippleAnimation, forKey: nil)
   }
   
-  private func setupAnimation(#duration: CFTimeInterval, fromValue: CGPath, toValue: CGPath) -> CABasicAnimation {
-    let animation = CABasicAnimation(keyPath: "path")
+  private func fadeAnimation() {
+    let fromValue: Float = rippleOpacity
+    let toValue: Float = 0.0
+    
+    let rippleAnimation = setupAnimation(keyPath: "opacity", duration: fadeDuration, fromValue: fromValue, toValue: toValue)
+    
+    rippleLayer.addAnimation(rippleAnimation, forKey: "fade")
+  }
+  
+  private func setupAnimation(#keyPath: String, duration: CFTimeInterval, fromValue: AnyObject, toValue: AnyObject) -> CABasicAnimation {
+    let animation = CABasicAnimation(keyPath: keyPath)
     animation.duration = duration
     animation.fromValue = fromValue
     animation.toValue = toValue
