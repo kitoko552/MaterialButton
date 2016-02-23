@@ -16,6 +16,8 @@ You can also initialize MaterialButton in programmatically like below.
 let button = MaterialButton(frame: CGRect(...))
 ```
 
+You can see the sample project under the Sample directory.
+
 ## Requirements
 - iOS 8.0+
 
